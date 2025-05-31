@@ -69,7 +69,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/lovable-uploads/da61d16e-5cba-4a57-9000-985030217290.png')`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/lovable-uploads/7397773b-bfd0-4ad3-896e-b3adebcff057.png')`,
           }}
         />
         <div className="relative z-10 container-custom text-center text-white">
