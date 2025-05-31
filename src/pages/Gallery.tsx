@@ -2,81 +2,84 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-
   const categories = ['All', 'Weddings', 'Corporate Events', 'Community Events'];
-
-  const galleryItems = [
-    {
-      image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
-      title: 'Elegant Wedding Marquee Setup',
-      category: 'Weddings'
-    },
-    {
-      image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
-      title: 'Complete Wedding Reception',
-      category: 'Weddings'
-    },
-    {
-      image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
-      title: 'Professional Event Marquee',
-      category: 'Corporate Events'
-    },
-    {
-      image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
-      title: 'Outdoor Festival Setup',
-      category: 'Community Events'
-    },
-    {
-      image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
-      title: 'Aerial View Marquee',
-      category: 'Corporate Events'
-    },
-    {
-      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
-      title: 'Marquee Interior Detail',
-      category: 'Weddings'
-    },
-    {
-      image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
-      title: 'Garden Party Setup',
-      category: 'Community Events'
-    },
-    {
-      image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
-      title: 'Corporate Dinner Event',
-      category: 'Corporate Events'
-    },
-    {
-      image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
-      title: 'Anniversary Celebration',
-      category: 'Weddings'
-    },
-    {
-      image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
-      title: 'Community Fundraiser',
-      category: 'Community Events'
-    },
-    {
-      image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
-      title: 'Outdoor Conference',
-      category: 'Corporate Events'
-    },
-    {
-      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
-      title: 'Reception Preparation',
-      category: 'Weddings'
-    }
-  ];
-
-  const filteredItems = activeCategory === 'All' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
-
-  return (
-    <div>
+  const galleryItems = [{
+    image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
+    title: 'Elegant Wedding Marquee',
+    description: 'Beautiful 12x18m marquee setup for a wedding at Ngawha Springs',
+    category: 'Weddings',
+    location: 'Ngawha Springs'
+  }, {
+    image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
+    title: 'Corporate Conference Setup',
+    description: 'Professional rectangular table arrangement for corporate retreat',
+    category: 'Corporate Events',
+    location: 'Bay of Islands'
+  }, {
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+    title: 'Community Hui Gathering',
+    description: 'Traditional hui setup with mixed seating arrangements',
+    category: 'Community Events',
+    location: 'Kaikohe'
+  }, {
+    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800',
+    title: 'Outdoor Wedding Reception',
+    description: 'Romantic outdoor setup with string lighting and round tables',
+    category: 'Weddings',
+    location: 'Hokianga'
+  }, {
+    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=800',
+    title: 'Festival Stage Setup',
+    description: 'Large marquee with stage platform for community festival',
+    category: 'Community Events',
+    location: 'Paihia'
+  }, {
+    image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
+    title: 'Business Launch Event',
+    description: 'Modern setup with LED lighting for product launch',
+    category: 'Corporate Events',
+    location: 'Kerikeri'
+  }, {
+    image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
+    title: 'Garden Wedding Ceremony',
+    description: 'Intimate ceremony setup with chiavari chairs',
+    category: 'Weddings',
+    location: 'Russell'
+  }, {
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+    title: 'School Fundraiser',
+    description: 'Community fundraising event with practical seating',
+    category: 'Community Events',
+    location: 'Kawakawa'
+  }, {
+    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800',
+    title: 'Waterfront Corporate Dinner',
+    description: 'Elegant waterfront setup for executive dinner',
+    category: 'Corporate Events',
+    location: 'Opua'
+  }, {
+    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=800',
+    title: 'Anniversary Celebration',
+    description: '50th wedding anniversary celebration setup',
+    category: 'Weddings',
+    location: 'Mangonui'
+  }, {
+    image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
+    title: 'Charity Gala Dinner',
+    description: 'Formal gala setup with premium table settings',
+    category: 'Community Events',
+    location: 'Kaitaia'
+  }, {
+    image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
+    title: 'Team Building Event',
+    description: 'Outdoor team building day with flexible seating',
+    category: 'Corporate Events',
+    location: 'Whangaroa'
+  }];
+  const filteredItems = activeCategory === 'All' ? galleryItems : galleryItems.filter(item => item.category === activeCategory);
+  return <div>
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-blue-50 to-earth-50">
         <div className="container-custom text-center">
@@ -98,16 +101,9 @@ const Gallery = () => {
       <section className="py-8 bg-white border-b">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={activeCategory === category ? 'default' : 'outline'}
-                onClick={() => setActiveCategory(category)}
-                className={activeCategory === category ? 'btn-primary' : ''}
-              >
+            {categories.map(category => <Button key={category} variant={activeCategory === category ? 'default' : 'outline'} onClick={() => setActiveCategory(category)} className={activeCategory === category ? 'btn-primary' : ''}>
                 {category}
-              </Button>
-            ))}
+              </Button>)}
           </div>
         </div>
       </section>
@@ -116,24 +112,20 @@ const Gallery = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
-              <div key={index} className="group cursor-pointer">
+            {filteredItems.map((item, index) => <div key={index} className="group cursor-pointer">
                 <div className="relative overflow-hidden rounded-lg aspect-square">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                     <Badge className="mb-2 bg-white/20 text-white border-white/30">
                       {item.category}
                     </Badge>
-                    <h3 className="text-lg font-serif font-semibold">{item.title}</h3>
+                    <h3 className="text-lg font-serif font-semibold mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-200 mb-2">{item.description}</p>
+                    <p className="text-xs text-gray-300">📍 {item.location}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -164,7 +156,7 @@ const Gallery = () => {
             <div className="text-center p-6 bg-white rounded-lg shadow-sm">
               <div className="text-4xl mb-3">🎪</div>
               <h3 className="font-serif font-semibold mb-2">Community Events</h3>
-              <p className="text-sm text-gray-600">Supporting local hui, festivals, and fundraising events</p>
+              <p className="text-sm text-gray-600">Client</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-sm">
               <div className="text-4xl mb-3">🎉</div>
@@ -197,11 +189,7 @@ const Gallery = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png" 
-                alt="Beautiful wedding setup with marquee"
-                className="rounded-lg shadow-xl"
-              />
+              <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=600" alt="Happy couple at their wedding" className="rounded-lg shadow-xl" />
             </div>
           </div>
         </div>
@@ -226,8 +214,6 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Gallery;
