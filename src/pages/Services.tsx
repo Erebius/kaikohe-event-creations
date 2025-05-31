@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -10,21 +9,21 @@ const Services = () => {
       title: 'Marquee Hire',
       description: 'Transform your event with our range of marquees, perfect for weddings, corporate functions, or community events in Kaikohe.',
       features: ['Various sizes available', 'Weather-resistant', 'Professional setup included'],
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
+      image: '/lovable-uploads/09bbb2a9-1f6a-4ac9-832f-0db0cd93bcb6.png',
       link: '/services/marquee-hire',
     },
     {
       title: 'Tables and Chairs',
       description: 'Complete your event setup with our versatile range of tables and chairs, suitable for any occasion and theme.',
       features: ['Round and rectangular tables', 'Various chair styles', 'Flexible quantities'],
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
+      image: '/lovable-uploads/3c60f3dc-8a94-4c5a-b636-8abb26a02e44.png',
       link: '/services/tables-chairs',
     },
     {
       title: 'Additional Equipment',
       description: 'Enhance your event with our comprehensive range of additional equipment and services.',
       features: ['Lighting systems', 'Dance floors', 'Portable facilities'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png',
       link: '/services/additional-equipment',
     },
   ];
