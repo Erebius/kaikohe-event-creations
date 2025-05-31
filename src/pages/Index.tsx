@@ -16,7 +16,7 @@ const Index = () => {
       title: 'Tables and Chairs',
       description: 'Complete your setup with our range of seating and table options.',
       link: '/services/tables-chairs',
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
+      image: '/lovable-uploads/3c60f3dc-8a94-4c5a-b636-8abb26a02e44.png',
     },
     {
       title: 'Additional Equipment',
