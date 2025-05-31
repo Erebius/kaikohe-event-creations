@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,88 +10,88 @@ const Gallery = () => {
 
   const galleryItems = [
     {
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
-      title: 'Elegant Wedding Marquee',
-      description: 'Beautiful 12x18m marquee setup for a wedding at Ngawha Springs',
+      image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
+      title: 'Elegant Wedding Marquee Setup',
+      description: 'Beautiful white marquee with open sides showcasing table and chair arrangements',
       category: 'Weddings',
-      location: 'Ngawha Springs'
+      location: 'Far North'
     },
     {
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
-      title: 'Corporate Conference Setup',
-      description: 'Professional rectangular table arrangement for corporate retreat',
+      image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
+      title: 'Complete Wedding Reception',
+      description: 'Full marquee setup with wooden tables, white chairs and elegant decorations',
+      category: 'Weddings',
+      location: 'Kaikohe'
+    },
+    {
+      image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
+      title: 'Professional Event Marquee',
+      description: 'Large white marquee with side walls for corporate and community events',
       category: 'Corporate Events',
       location: 'Bay of Islands'
     },
     {
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
-      title: 'Community Hui Gathering',
-      description: 'Traditional hui setup with mixed seating arrangements',
-      category: 'Community Events',
-      location: 'Kaikohe'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800',
-      title: 'Outdoor Wedding Reception',
-      description: 'Romantic outdoor setup with string lighting and round tables',
-      category: 'Weddings',
-      location: 'Hokianga'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=800',
-      title: 'Festival Stage Setup',
-      description: 'Large marquee with stage platform for community festival',
+      image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
+      title: 'Outdoor Festival Setup',
+      description: 'Sturdy marquee setup perfect for outdoor festivals and community gatherings',
       category: 'Community Events',
       location: 'Paihia'
     },
     {
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
-      title: 'Business Launch Event',
-      description: 'Modern setup with LED lighting for product launch',
+      image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
+      title: 'Aerial View Marquee',
+      description: 'Bird\'s eye view of our quality marquee installation',
       category: 'Corporate Events',
       location: 'Kerikeri'
     },
     {
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
-      title: 'Garden Wedding Ceremony',
-      description: 'Intimate ceremony setup with chiavari chairs',
+      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
+      title: 'Marquee Interior Detail',
+      description: 'Inside view showing the quality construction and lighting setup',
       category: 'Weddings',
       location: 'Russell'
     },
     {
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
-      title: 'School Fundraiser',
-      description: 'Community fundraising event with practical seating',
+      image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
+      title: 'Garden Party Setup',
+      description: 'Perfect setup for outdoor celebrations and garden parties',
       category: 'Community Events',
       location: 'Kawakawa'
     },
     {
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800',
-      title: 'Waterfront Corporate Dinner',
-      description: 'Elegant waterfront setup for executive dinner',
+      image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
+      title: 'Corporate Dinner Event',
+      description: 'Professional setup ideal for business dinners and corporate functions',
       category: 'Corporate Events',
       location: 'Opua'
     },
     {
-      image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=800',
+      image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
       title: 'Anniversary Celebration',
-      description: '50th wedding anniversary celebration setup',
+      description: 'Elegant marquee setup perfect for milestone celebrations',
       category: 'Weddings',
       location: 'Mangonui'
     },
     {
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
-      title: 'Charity Gala Dinner',
-      description: 'Formal gala setup with premium table settings',
+      image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
+      title: 'Community Fundraiser',
+      description: 'Large marquee setup supporting local community fundraising events',
       category: 'Community Events',
       location: 'Kaitaia'
     },
     {
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
-      title: 'Team Building Event',
-      description: 'Outdoor team building day with flexible seating',
+      image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
+      title: 'Outdoor Conference',
+      description: 'Professional outdoor venue setup for conferences and seminars',
       category: 'Corporate Events',
       location: 'Whangaroa'
+    },
+    {
+      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
+      title: 'Reception Preparation',
+      description: 'Behind-the-scenes look at our professional setup process',
+      category: 'Weddings',
+      location: 'Hokianga'
     }
   ];
 
@@ -225,8 +224,8 @@ const Gallery = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=600" 
-                alt="Happy couple at their wedding"
+                src="/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png" 
+                alt="Beautiful wedding setup with marquee"
                 className="rounded-lg shadow-xl"
               />
             </div>
