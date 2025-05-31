@@ -22,7 +22,7 @@ const Index = () => {
       title: 'Additional Equipment',
       description: 'Enhance your event with extras like portaloos and lighting.',
       link: '/services/additional-equipment',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png',
     },
   ];
 
