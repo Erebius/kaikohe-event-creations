@@ -1,0 +1,110 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+
+const Services = () => {
+  const services = [
+    {
+      title: 'Marquee Hire',
+      description: 'Transform your event with our range of marquees, perfect for weddings, corporate functions, or community events in Kaikohe.',
+      features: ['Various sizes available', 'Weather-resistant', 'Professional setup included'],
+      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
+      link: '/services/marquee-hire',
+    },
+    {
+      title: 'Tables and Chairs',
+      description: 'Complete your event setup with our versatile range of tables and chairs, suitable for any occasion and theme.',
+      features: ['Round and rectangular tables', 'Various chair styles', 'Flexible quantities'],
+      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800',
+      link: '/services/tables-chairs',
+    },
+    {
+      title: 'Additional Equipment',
+      description: 'Enhance your event with our comprehensive range of additional equipment and services.',
+      features: ['Lighting systems', 'Dance floors', 'Portable facilities'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+      link: '/services/additional-equipment',
+    },
+  ];
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="section-padding bg-gradient-to-br from-blue-50 to-earth-50">
+        <div className="container-custom text-center">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+            Comprehensive Event Hire Solutions
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+            At Kaikohe Hire, we provide everything you need to create a memorable event in the Far North. 
+            From stunning marquees to elegant tables and chairs, our high-quality equipment and exceptional 
+            service ensure your event runs smoothly.
+          </p>
+          <Button asChild size="lg" className="btn-primary">
+            <Link to="/booking">Get Started</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-serif font-semibold mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                  
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        <span className="text-sm text-gray-600">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button asChild className="w-full">
+                    <Link to={service.link}>Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+            Ready to Plan Your Event?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Explore our complete range of services and get a personalized quote for your upcoming event.
+          </p>
+          <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+            <Button asChild size="lg" className="btn-primary">
+              <Link to="/booking">Book Now</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Services;
