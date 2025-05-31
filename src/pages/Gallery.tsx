@@ -12,86 +12,62 @@ const Gallery = () => {
     {
       image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
       title: 'Elegant Wedding Marquee Setup',
-      description: 'Beautiful white marquee with open sides showcasing table and chair arrangements',
-      category: 'Weddings',
-      location: 'Far North'
+      category: 'Weddings'
     },
     {
       image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
       title: 'Complete Wedding Reception',
-      description: 'Full marquee setup with wooden tables, white chairs and elegant decorations',
-      category: 'Weddings',
-      location: 'Kaikohe'
+      category: 'Weddings'
     },
     {
       image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
       title: 'Professional Event Marquee',
-      description: 'Large white marquee with side walls for corporate and community events',
-      category: 'Corporate Events',
-      location: 'Bay of Islands'
+      category: 'Corporate Events'
     },
     {
       image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
       title: 'Outdoor Festival Setup',
-      description: 'Sturdy marquee setup perfect for outdoor festivals and community gatherings',
-      category: 'Community Events',
-      location: 'Paihia'
+      category: 'Community Events'
     },
     {
       image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
       title: 'Aerial View Marquee',
-      description: 'Bird\'s eye view of our quality marquee installation',
-      category: 'Corporate Events',
-      location: 'Kerikeri'
+      category: 'Corporate Events'
     },
     {
       image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
       title: 'Marquee Interior Detail',
-      description: 'Inside view showing the quality construction and lighting setup',
-      category: 'Weddings',
-      location: 'Russell'
+      category: 'Weddings'
     },
     {
       image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
       title: 'Garden Party Setup',
-      description: 'Perfect setup for outdoor celebrations and garden parties',
-      category: 'Community Events',
-      location: 'Kawakawa'
+      category: 'Community Events'
     },
     {
       image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
       title: 'Corporate Dinner Event',
-      description: 'Professional setup ideal for business dinners and corporate functions',
-      category: 'Corporate Events',
-      location: 'Opua'
+      category: 'Corporate Events'
     },
     {
       image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
       title: 'Anniversary Celebration',
-      description: 'Elegant marquee setup perfect for milestone celebrations',
-      category: 'Weddings',
-      location: 'Mangonui'
+      category: 'Weddings'
     },
     {
       image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
       title: 'Community Fundraiser',
-      description: 'Large marquee setup supporting local community fundraising events',
-      category: 'Community Events',
-      location: 'Kaitaia'
+      category: 'Community Events'
     },
     {
       image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
       title: 'Outdoor Conference',
-      description: 'Professional outdoor venue setup for conferences and seminars',
-      category: 'Corporate Events',
-      location: 'Whangaroa'
+      category: 'Corporate Events'
     },
     {
       image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
       title: 'Reception Preparation',
-      description: 'Behind-the-scenes look at our professional setup process',
-      category: 'Weddings',
-      location: 'Hokianga'
+      category: 'Weddings'
     }
   ];
 
@@ -153,9 +129,7 @@ const Gallery = () => {
                     <Badge className="mb-2 bg-white/20 text-white border-white/30">
                       {item.category}
                     </Badge>
-                    <h3 className="text-lg font-serif font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-200 mb-2">{item.description}</p>
-                    <p className="text-xs text-gray-300">📍 {item.location}</p>
+                    <h3 className="text-lg font-serif font-semibold">{item.title}</h3>
                   </div>
                 </div>
               </div>
