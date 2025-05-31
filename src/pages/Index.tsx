@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -10,7 +11,7 @@ const Index = () => {
       title: 'Marquee Hire',
       description: 'Create a stunning event space with our versatile marquees.',
       link: '/services/marquee-hire',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800',
+      image: '/lovable-uploads/09bbb2a9-1f6a-4ac9-832f-0db0cd93bcb6.png',
     },
     {
       title: 'Tables and Chairs',
