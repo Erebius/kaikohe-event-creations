@@ -1,78 +1,59 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
 const About = () => {
-  const teamMembers = [
-    {
-      name: 'Aroha Smith',
-      role: 'Founder & Director',
-      bio: 'With over 15 years in the events industry, Aroha founded Kaikohe Hire to serve her local community.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=300'
-    },
-    {
-      name: 'James Wilson',
-      role: 'Operations Manager',
-      bio: 'James ensures every delivery and setup runs smoothly, with a focus on customer satisfaction.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300'
-    },
-    {
-      name: 'Maria Rodriguez',
-      role: 'Event Coordinator',
-      bio: 'Maria helps clients plan their perfect event setup with expert advice and creative solutions.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300'
-    }
-  ];
-
-  const testimonials = [
-    {
-      quote: "The team went above and beyond for our community hui. Highly recommend!",
-      name: "Mere W.",
-      location: "Hokianga",
-      event: "Community Hui"
-    },
-    {
-      quote: "Perfect setup for our destination wedding. Thank you, Kaikohe Hire!",
-      name: "Emma L.",
-      location: "Auckland",
-      event: "Wedding"
-    },
-    {
-      quote: "Professional service from start to finish. Made our corporate retreat seamless.",
-      name: "David K.",
-      location: "Whangarei",
-      event: "Corporate Event"
-    }
-  ];
-
-  const milestones = [
-    {
-      year: '2008',
-      title: 'Founded',
-      description: 'Kaikohe Hire established to serve the Far North community'
-    },
-    {
-      year: '2012',
-      title: 'Expansion',
-      description: 'Added tables and chairs to our marquee hire service'
-    },
-    {
-      year: '2018',
-      title: 'Growth',
-      description: 'Expanded fleet to include additional equipment and lighting'
-    },
-    {
-      year: '2024',
-      title: 'Present',
-      description: 'Proudly serving 500+ events annually across the Far North'
-    }
-  ];
-
-  return (
-    <div>
+  const teamMembers = [{
+    name: 'Aroha Smith',
+    role: 'Founder & Director',
+    bio: 'With over 15 years in the events industry, Aroha founded Kaikohe Hire to serve her local community.',
+    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=300'
+  }, {
+    name: 'James Wilson',
+    role: 'Operations Manager',
+    bio: 'James ensures every delivery and setup runs smoothly, with a focus on customer satisfaction.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300'
+  }, {
+    name: 'Maria Rodriguez',
+    role: 'Event Coordinator',
+    bio: 'Maria helps clients plan their perfect event setup with expert advice and creative solutions.',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300'
+  }];
+  const testimonials = [{
+    quote: "The team went above and beyond for our community hui. Highly recommend!",
+    name: "Mere W.",
+    location: "Hokianga",
+    event: "Community Hui"
+  }, {
+    quote: "Perfect setup for our destination wedding. Thank you, Kaikohe Hire!",
+    name: "Emma L.",
+    location: "Auckland",
+    event: "Wedding"
+  }, {
+    quote: "Professional service from start to finish. Made our corporate retreat seamless.",
+    name: "David K.",
+    location: "Whangarei",
+    event: "Corporate Event"
+  }];
+  const milestones = [{
+    year: '2008',
+    title: 'Founded',
+    description: 'Kaikohe Hire established to serve the Far North community'
+  }, {
+    year: '2012',
+    title: 'Expansion',
+    description: 'Added tables and chairs to our marquee hire service'
+  }, {
+    year: '2018',
+    title: 'Growth',
+    description: 'Expanded fleet to include additional equipment and lighting'
+  }, {
+    year: '2024',
+    title: 'Present',
+    description: 'Proudly serving 500+ events annually across the Far North'
+  }];
+  return <div>
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-blue-50 to-earth-50">
         <div className="container-custom">
@@ -82,12 +63,7 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
                 About Kaikohe Hire
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Kia ora! Kaikohe Hire has been proudly serving the Far North for over 15 years, 
-                providing top-quality marquees, tables, and chairs for events of all sizes. 
-                Founded by Aroha Smith, our mission is to make every event in Kaikohe and beyond 
-                a success through reliable equipment and exceptional service.
-              </p>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">Kia ora! Kaikohe Hire has been proudly serving the Far North for over 30 years, providing top-quality marquees, tables, and chairs for events of all sizes. Our mission is to make every event in Kaikohe and beyond a success through reliable equipment and exceptional service.</p>
               <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex">
                 <Button asChild size="lg" className="btn-primary">
                   <Link to="/services">Our Services</Link>
@@ -98,11 +74,7 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800" 
-                alt="Kaikohe Hire team setting up event"
-                className="rounded-lg shadow-xl"
-              />
+              <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800" alt="Kaikohe Hire team setting up event" className="rounded-lg shadow-xl" />
             </div>
           </div>
         </div>
@@ -120,15 +92,13 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {milestones.map((milestone, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            {milestones.map((milestone, index) => <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="text-3xl font-bold text-primary mb-2">{milestone.year}</div>
                   <h3 className="text-lg font-serif font-semibold mb-2">{milestone.title}</h3>
                   <p className="text-gray-600 text-sm">{milestone.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -145,22 +115,16 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            {teamMembers.map((member, index) => <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-xl font-serif font-semibold mb-1">{member.name}</h3>
                   <p className="text-primary font-medium mb-3">{member.role}</p>
                   <p className="text-gray-600 text-sm">{member.bio}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -199,11 +163,7 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800" 
-                alt="Community event in the Far North"
-                className="rounded-lg shadow-xl"
-              />
+              <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800" alt="Community event in the Far North" className="rounded-lg shadow-xl" />
             </div>
           </div>
         </div>
@@ -221,8 +181,7 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {testimonials.map((testimonial, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="text-4xl mb-4 text-primary">"</div>
                   <p className="text-gray-700 mb-6 leading-relaxed">{testimonial.quote}</p>
@@ -237,8 +196,7 @@ const About = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -262,8 +220,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
