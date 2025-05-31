@@ -13,7 +13,6 @@ import TablesChairs from "./pages/TablesChairs";
 import AdditionalEquipment from "./pages/AdditionalEquipment";
 import Booking from "./pages/Booking";
 import About from "./pages/About";
-import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
@@ -37,7 +36,6 @@ const App = () => (
               <Route path="/services/additional-equipment" element={<AdditionalEquipment />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/about" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="*" element={<NotFound />} />
