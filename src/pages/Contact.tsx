@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -31,13 +32,6 @@ const Contact = () => {
       description: 'Send us a detailed inquiry',
       action: 'mailto:info@kaikohehire.co.nz',
       icon: '✉️'
-    },
-    {
-      title: 'Address',
-      value: '123 Main Road, Kaikohe',
-      description: 'Visit us in person',
-      action: '#',
-      icon: '📍'
     }
   ];
 
@@ -57,10 +51,6 @@ const Contact = () => {
     {
       question: 'Can I customize my hire package?',
       answer: 'Absolutely! We work with you to create a tailored package that meets your specific event needs and budget. Contact us to discuss your requirements.'
-    },
-    {
-      question: 'What happens if it rains during my event?',
-      answer: 'Our marquees are completely waterproof and designed to withstand Northland weather conditions. We also offer sidewalls for additional protection.'
     }
   ];
 
@@ -97,23 +87,19 @@ const Contact = () => {
       {/* Contact Methods */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
             {contactMethods.map((method, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="text-4xl mb-4">{method.icon}</div>
                   <h3 className="text-xl font-serif font-semibold mb-2">{method.title}</h3>
                   <p className="text-gray-600 mb-4">{method.description}</p>
-                  {method.action.startsWith('#') ? (
-                    <p className="font-medium text-primary">{method.value}</p>
-                  ) : (
-                    <a 
-                      href={method.action}
-                      className="font-medium text-primary hover:text-primary/80 transition-colors"
-                    >
-                      {method.value}
-                    </a>
-                  )}
+                  <a 
+                    href={method.action}
+                    className="font-medium text-primary hover:text-primary/80 transition-colors"
+                  >
+                    {method.value}
+                  </a>
                 </CardContent>
               </Card>
             ))}
@@ -121,128 +107,87 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Map */}
+      {/* Contact Form */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-serif font-bold mb-6">Send Us a Message</h2>
-              <Card>
-                <CardContent className="p-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="subject">Subject</Label>
-                        <Input
-                          id="subject"
-                          name="subject"
-                          placeholder="e.g., Wedding Inquiry"
-                          value={formData.subject}
-                          onChange={handleInputChange}
-                        />
-                      </div>
-                    </div>
-
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-serif font-bold mb-4">Send Us a Message</h2>
+              <p className="text-gray-600">Get in touch with your event requirements and we'll get back to you soon.</p>
+            </div>
+            <Card>
+              <CardContent className="p-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="Tell us about your event or question..."
-                        value={formData.message}
+                      <Label htmlFor="name">Full Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleInputChange}
-                        rows={6}
                         required
                       />
                     </div>
-
-                    <Button type="submit" size="lg" className="w-full btn-primary">
-                      Send Message
-                    </Button>
-
-                    <p className="text-sm text-gray-600 text-center">
-                      We'll get back to you within 24 hours.
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Map & Info */}
-            <div>
-              <h2 className="text-3xl font-serif font-bold mb-6">Visit Our Location</h2>
-              <Card className="mb-6">
-                <CardContent className="p-0">
-                  <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                    <div className="text-center text-gray-600">
-                      <div className="text-4xl mb-2">📍</div>
-                      <p className="font-medium">Interactive Map</p>
-                      <p className="text-sm">123 Main Road, Kaikohe</p>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email Address *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                      />
                     </div>
                   </div>
-                </CardContent>
-              </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Business Hours</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span className="font-medium">8:00 AM - 5:00 PM</span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="subject">Subject</Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        placeholder="e.g., Wedding Inquiry"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                      />
+                    </div>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span className="font-medium">9:00 AM - 2:00 PM</span>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message *</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell us about your event or question..."
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={6}
+                      required
+                    />
                   </div>
-                  <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span className="font-medium">By Appointment</span>
-                  </div>
-                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-                    <p className="text-sm text-blue-800">
-                      <strong>Emergency Contact:</strong> Available 24/7 for urgent event needs
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+
+                  <Button type="submit" size="lg" className="w-full btn-primary">
+                    Send Message
+                  </Button>
+
+                  <p className="text-sm text-gray-600 text-center">
+                    We'll get back to you within 24 hours.
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

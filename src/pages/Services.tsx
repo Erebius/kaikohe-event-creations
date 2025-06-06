@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const Services = () => {
   const services = [
@@ -26,6 +28,32 @@ const Services = () => {
       image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png',
       link: '/services/additional-equipment',
     },
+  ];
+
+  const chairsTablesData = [
+    { item: "Stacking Chair", price: "$2.50" },
+    { item: "Folding Chair", price: "$3.00" },
+    { item: "Plastic Round Table 1.2m", price: "$12.00" },
+    { item: "Plastic Round Table 1.8m", price: "$19.50" },
+    { item: "Rectangular Plastic Table", price: "$12.00" },
+    { item: "Wood Trestle Table", price: "$12.00" },
+    { item: "Stage Panel", price: "$60.00" }
+  ];
+
+  const portableToiletsData = [
+    { item: "Standard Portable Toilet", price: "$100.00" },
+    { item: "Flushing Portable Toilet", price: "$150.00" }
+  ];
+
+  const marqueesData = [
+    { item: "6x6m Marquee", price: "$500.00" },
+    { item: "6x9m Marquee", price: "$700.00" },
+    { item: "12x9m Marquee", price: "$1,300–$1,500" },
+    { item: "12x12m Marquee", price: "$1,800.00" },
+    { item: "12x18m Marquee", price: "$2,700.00" },
+    { item: "12x24m Marquee", price: "$3,100.00" },
+    { item: "12x30m Marquee", price: "$3,900.00" },
+    { item: "12x36m Marquee", price: "$4,600.00" }
   ];
 
   return (
@@ -79,6 +107,106 @@ const Services = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+              January 2025 Equipment Hire Prices
+            </h2>
+            <p className="text-muted-foreground italic text-lg">
+              Prices for 1–3 day hireage. All prices are subject to change.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* Section 1: Chairs and Tables */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif">Chairs and Tables</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="font-semibold text-foreground">Item</TableHead>
+                        <TableHead className="font-semibold text-foreground text-right">Price (NZD)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {chairsTablesData.map((row, index) => (
+                        <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                          <TableCell className="font-medium">{row.item}</TableCell>
+                          <TableCell className="text-right font-medium">{row.price}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Section 2: Portable Toilets */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif">Portable Toilets</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="font-semibold text-foreground">Item</TableHead>
+                        <TableHead className="font-semibold text-foreground text-right">Price (NZD)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {portableToiletsData.map((row, index) => (
+                        <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                          <TableCell className="font-medium">{row.item}</TableCell>
+                          <TableCell className="text-right font-medium">{row.price}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Section 3: Marquees */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif">Marquees</CardTitle>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  All marquees are peg and pole, requiring setup on grass with an additional 1.5m of available area on each side.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="font-semibold text-foreground">Item</TableHead>
+                        <TableHead className="font-semibold text-foreground text-right">Price (NZD)</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {marqueesData.map((row, index) => (
+                        <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                          <TableCell className="font-medium">{row.item}</TableCell>
+                          <TableCell className="text-right font-medium">{row.price}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
