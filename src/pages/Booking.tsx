@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { format } from 'date-fns';
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon, Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Booking = () => {
@@ -25,45 +25,24 @@ const Booking = () => {
     message: ''
   });
 
-  const bookingSteps = [
+  const enquirySteps = [
     {
-      title: 'Check Availability',
-      description: 'Enter your event date and select the equipment you need to see if it\'s available.',
-      icon: '📅',
-      action: 'Check Now'
+      title: 'Submit Enquiry',
+      description: 'Tell us about your event needs using our enquiry form or give us a call to discuss your requirements.',
+      icon: '📝',
+      action: 'Start Enquiry'
     },
     {
-      title: 'Get a Quote',
-      description: 'Fill out our quick form, and we\'ll provide a tailored quote for your event needs.',
+      title: 'Receive Quote',
+      description: 'We\'ll provide a detailed quote based on your specific needs and event requirements.',
       icon: '💰',
-      action: 'Request Quote'
+      action: 'Get Quote'
     },
     {
-      title: 'Confirm Booking',
-      description: 'Review your quote and confirm your booking. We\'ll handle the rest!',
-      icon: '✅',
-      action: 'Book Now'
-    }
-  ];
-
-  const popularPackages = [
-    {
-      name: 'Intimate Wedding',
-      guests: '50-80 guests',
-      includes: ['6x9m Marquee', '8 Round Tables', '60 Chiavari Chairs', 'Basic Lighting'],
-      price: 'From $2,200'
-    },
-    {
-      name: 'Corporate Event',
-      guests: '40-100 guests',
-      includes: ['12x9m Marquee', '10 Rectangular Tables', '80 Stacking Chairs', 'Stage Platform'],
-      price: 'From $2,800'
-    },
-    {
-      name: 'Community Gathering',
-      guests: '100-150 guests',
-      includes: ['12x18m Marquee', '15 Round Tables', '120 Folding Chairs', 'Portable Facilities'],
-      price: 'From $3,500'
+      title: 'Confirm by Phone',
+      description: 'Once you\'re happy with the quote, call us to confirm your booking and arrange delivery details.',
+      icon: '📞',
+      action: 'Confirm Booking'
     }
   ];
 
@@ -76,8 +55,8 @@ const Booking = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData, date);
-    // Handle form submission logic here
+    console.log('Enquiry submitted:', formData, date);
+    // Handle enquiry submission logic here
   };
 
   return (
@@ -85,34 +64,42 @@ const Booking = () => {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-blue-50 to-earth-50">
         <div className="container-custom text-center">
-          <Badge className="mb-4 bg-primary/10 text-primary">Easy Booking Process</Badge>
+          <Badge className="mb-4 bg-primary/10 text-primary">Make an Enquiry</Badge>
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            Reserve Your Event Equipment Today
+            Enquire About Your Event Equipment
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Booking with Kaikohe Hire is simple and stress-free. Use our online tools to check equipment 
-            availability, request a personalized quote, or confirm your booking directly. We recommend 
-            booking early to secure your preferred marquees, tables, and chairs for your event.
+            Planning an event in the Far North? Get in touch with Kaikohe Hire to discuss your 
+            marquee, table, and chair needs. We provide personalized quotes and handle all bookings 
+            through direct contact to ensure we get every detail right for your special occasion.
           </p>
-          <Button asChild size="lg" className="btn-primary">
-            <Link to="#booking-form">Start Booking Now</Link>
-          </Button>
+          <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+            <Button asChild size="lg" className="btn-primary">
+              <Link to="#enquiry-form">Submit Enquiry</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <a href="tel:09-401-1044">
+                <Phone className="mr-2 h-4 w-4" />
+                Call: 09 401 1044
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Booking Steps */}
+      {/* Enquiry Process */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              How It Works
+              How Our Enquiry Process Works
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our simple three-step process makes booking your event equipment effortless.
+              Our simple three-step process ensures you get exactly what you need for your event.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {bookingSteps.map((step, index) => (
+            {enquirySteps.map((step, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="text-4xl mb-4">{step.icon}</div>
@@ -128,56 +115,57 @@ const Booking = () => {
         </div>
       </section>
 
-      {/* Popular Packages */}
+      {/* Contact Options */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Popular Packages
+              Get in Touch
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Quick-start packages for common event types. All packages can be customized to your needs.
+              Choose the way that works best for you to discuss your event needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {popularPackages.map((pkg, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-center">
-                    <h3 className="text-xl font-serif font-semibold">{pkg.name}</h3>
-                    <p className="text-sm text-gray-600 mt-2">{pkg.guests}</p>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    {pkg.includes.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-sm text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="border-t pt-4">
-                    <p className="text-2xl font-bold text-primary text-center">{pkg.price}</p>
-                    <Button className="w-full mt-4">Select Package</Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-8 text-center">
+                <Phone className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-serif font-semibold mb-3">Call Us Directly</h3>
+                <p className="text-gray-600 mb-6">
+                  Speak with our team immediately to discuss your event requirements and get instant answers.
+                </p>
+                <Button asChild size="lg" className="w-full">
+                  <a href="tel:09-401-1044">09 401 1044</a>
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-8 text-center">
+                <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-serif font-semibold mb-3">Submit Enquiry Form</h3>
+                <p className="text-gray-600 mb-6">
+                  Fill out our detailed enquiry form and we'll get back to you with a personalized quote.
+                </p>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <Link to="#enquiry-form">Enquiry Form</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Booking Form */}
-      <section id="booking-form" className="section-padding bg-white">
+      {/* Enquiry Form */}
+      <section id="enquiry-form" className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-                Get Your Personalized Quote
+                Submit Your Event Enquiry
               </h2>
               <p className="text-lg text-gray-600">
-                Fill out the form below and we'll provide a tailored quote for your event needs.
+                Tell us about your event and we'll provide a detailed quote. All bookings are confirmed by phone or email.
               </p>
             </div>
             
@@ -283,11 +271,11 @@ const Booking = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Additional Details</Label>
+                    <Label htmlFor="message">Event Details & Requirements</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell us about your event, specific requirements, or questions..."
+                      placeholder="Tell us about your event, specific equipment needs, setup requirements, or any questions..."
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
@@ -295,12 +283,17 @@ const Booking = () => {
                   </div>
 
                   <Button type="submit" size="lg" className="w-full btn-primary">
-                    Request Quote
+                    Submit Enquiry
                   </Button>
 
-                  <p className="text-sm text-gray-600 text-center">
-                    We'll get back to you within 24 hours with a personalized quote.
-                  </p>
+                  <div className="text-center space-y-2">
+                    <p className="text-sm text-gray-600">
+                      We'll get back to you within 24 hours with a detailed quote.
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      All bookings are confirmed by phone or email after you receive your quote.
+                    </p>
+                  </div>
                 </form>
               </CardContent>
             </Card>
@@ -312,14 +305,17 @@ const Booking = () => {
       <section className="section-padding bg-primary text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-            Prefer to Talk?
+            Need to Speak with Someone?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Give us a call to discuss your event needs or get immediate answers to your questions.
+            Our friendly team is ready to help with your event planning. Call us for immediate assistance or to confirm your booking.
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
-              <a href="tel:09-401-1044">Call: 09 401 1044</a>
+              <a href="tel:09-401-1044">
+                <Phone className="mr-2 h-4 w-4" />
+                Call: 09 401 1044
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
               <Link to="/contact">Contact Page</Link>
