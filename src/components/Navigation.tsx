@@ -51,7 +51,7 @@ const Navigation = () => {
                 {item.label}
               </Link>)}
             <Button asChild className="btn-primary">
-              <Link to="/booking">Book Now</Link>
+              <Link to="/booking">Enquire Now</Link>
             </Button>
           </div>
 
