@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -62,10 +61,6 @@ const Contact = () => {
     {
       question: 'What happens if it rains during my event?',
       answer: 'Our marquees are completely waterproof and designed to withstand Northland weather conditions. We also offer sidewalls for additional protection.'
-    },
-    {
-      question: 'Do you provide insurance for hired equipment?',
-      answer: 'We carry comprehensive insurance for our equipment. We recommend clients also consider event insurance for additional peace of mind.'
     }
   ];
 
