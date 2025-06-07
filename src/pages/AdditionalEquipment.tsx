@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -35,6 +34,7 @@ const AdditionalEquipment = () => {
         'Clean, modern portaloos',
         'Hand washing stations',
         'Mirror and lighting included',
+        'Safety rails for accessibility',
         'Regular servicing available'
       ],
       description: 'Ensure guest comfort with our high-quality portable facilities.',
