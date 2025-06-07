@@ -16,7 +16,7 @@ const AdditionalEquipment = () => {
         'Dance floor lighting'
       ],
       description: 'Create the perfect atmosphere with our professional lighting solutions.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400'
+      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png'
     },
     {
       category: 'Dance Floors',
@@ -27,7 +27,7 @@ const AdditionalEquipment = () => {
         'Safe, level surfaces'
       ],
       description: 'Keep your guests dancing all night with our premium dance floors.',
-      image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=400'
+      image: '/lovable-uploads/da61d16e-5cba-4a57-9000-985030217290.png'
     },
     {
       category: 'Portable Facilities',
@@ -38,7 +38,7 @@ const AdditionalEquipment = () => {
         'Regular servicing available'
       ],
       description: 'Ensure guest comfort with our high-quality portable facilities.',
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=400'
+      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png'
     },
     {
       category: 'Staging & Platforms',
@@ -49,7 +49,7 @@ const AdditionalEquipment = () => {
         'Weather-resistant materials'
       ],
       description: 'Elevate your performers and speakers with our professional staging.',
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=400'
+      image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png'
     }
   ];
 
@@ -94,16 +94,16 @@ const AdditionalEquipment = () => {
               </p>
               <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex">
                 <Button asChild size="lg" className="btn-primary">
-                  <Link to="/booking">Explore Equipment</Link>
+                  <Link to="/booking#enquiry-form">Explore Equipment</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">Get Advice</Link>
+                  <a href="tel:094011044">Call Us: 09 401 1044</a>
                 </Button>
               </div>
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" 
+                src="/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png" 
                 alt="Event lighting setup"
                 className="rounded-lg shadow-xl"
               />
@@ -170,7 +170,7 @@ const AdditionalEquipment = () => {
                     ))}
                   </div>
                   <Button asChild variant="outline" className="w-full mt-4">
-                    <Link to="/booking">Add to Quote</Link>
+                    <Link to="/booking#enquiry-form">Add to Quote</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -213,7 +213,7 @@ const AdditionalEquipment = () => {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking">Get Package Quote</Link>
+                  <Link to="/booking#enquiry-form">Get Package Quote</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -240,7 +240,7 @@ const AdditionalEquipment = () => {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking">Get Package Quote</Link>
+                  <Link to="/booking#enquiry-form">Get Package Quote</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -267,7 +267,7 @@ const AdditionalEquipment = () => {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking">Get Package Quote</Link>
+                  <Link to="/booking#enquiry-form">Get Package Quote</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -286,10 +286,10 @@ const AdditionalEquipment = () => {
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
-              <Link to="/booking">Create Equipment Package</Link>
+              <Link to="/booking#enquiry-form">Create Equipment Package</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/contact">Speak to Specialist</Link>
+              <a href="tel:094011044">Speak to Specialist</a>
             </Button>
           </div>
         </div>

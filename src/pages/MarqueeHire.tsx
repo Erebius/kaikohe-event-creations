@@ -7,14 +7,14 @@ import { Badge } from '@/components/ui/badge';
 
 const MarqueeHire = () => {
   const marqueeSizes = [
-    { size: '6x6m', guests: '10-50 guests', price: '$500', duration: '1-3 days' },
-    { size: '6x9m', guests: '30-70 guests', price: '$750', duration: '1-3 days' },
-    { size: '12x9m', guests: '50-100 guests', price: '$1500', duration: '1-3 days' },
-    { size: '12x12m', guests: '70-120 guests', price: '$1800', duration: '1-3 days' },
-    { size: '12x18m', guests: '100+ guests', price: '$2900', duration: '1-3 days' },
-    { size: '12x24m', guests: '150+ guests', price: '$3500', duration: '1-3 days' },
-    { size: '12x30m', guests: '200+ guests', price: '$4200', duration: '1-3 days' },
-    { size: '12x36m', guests: '250+ guests', price: '$4900', duration: '1-3 days' },
+    { size: '6x6m', guests: 'Up to 25 guests', price: '$500', duration: '1-3 days' },
+    { size: '6x9m', guests: 'Up to 35 guests', price: '$700', duration: '1-3 days' },
+    { size: '12x12m', guests: 'Up to 100 guests', price: '$1,800', duration: '1-3 days' },
+    { size: '12x18m', guests: 'Up to 140 guests', price: '$2,700', duration: '1-3 days' },
+    { size: '12x24m', guests: 'Up to 180 guests', price: '$3,100', duration: '1-3 days' },
+    { size: '12x30m', guests: 'Large events', price: '$3,900', duration: '1-3 days' },
+    { size: '12x36m', guests: 'Large events', price: '$4,600', duration: '1-3 days' },
+    { size: 'Star 8x8m', guests: 'Special events', price: 'Enquiry Only', duration: '1-3 days' },
   ];
 
   const features = [
@@ -44,16 +44,16 @@ const MarqueeHire = () => {
               </p>
               <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex">
                 <Button asChild size="lg" className="btn-primary">
-                  <Link to="/booking">Get a Quote</Link>
+                  <Link to="/booking#enquiry-form">Get a Quote</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">Ask Questions</Link>
+                  <a href="tel:094011044">Call Us: 09 401 1044</a>
                 </Button>
               </div>
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800" 
+                src="/lovable-uploads/09bbb2a9-1f6a-4ac9-832f-0db0cd93bcb6.png" 
                 alt="Elegant marquee setup"
                 className="rounded-lg shadow-xl"
               />
@@ -112,7 +112,7 @@ const MarqueeHire = () => {
                     <p className="text-sm text-gray-500">{marquee.duration}</p>
                   </div>
                   <Button asChild className="w-full" variant="outline">
-                    <Link to="/booking">Select This Size</Link>
+                    <Link to="/booking#enquiry-form">Select This Size</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -123,7 +123,7 @@ const MarqueeHire = () => {
               Need a custom size or have special requirements?
             </p>
             <Button asChild variant="outline" size="lg">
-              <Link to="/contact">Contact Us for Custom Quote</Link>
+              <a href="tel:094011044">Contact Us for Custom Quote</a>
             </Button>
           </div>
         </div>
@@ -141,15 +141,48 @@ const MarqueeHire = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="aspect-square overflow-hidden rounded-lg">
-                <img 
-                  src={`https://images.unsplash.com/photo-${item % 2 === 0 ? '1721322800607-8c38375eef04' : '1487958449943-2429e8be8625'}?q=80&w=400`}
-                  alt={`Marquee setup ${item}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            ))}
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/09bbb2a9-1f6a-4ac9-832f-0db0cd93bcb6.png"
+                alt="Marquee setup 1"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/243c1067-153c-4ff2-b60b-5bacbd5d5b02.png"
+                alt="Marquee setup 2"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png"
+                alt="Marquee setup 3"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/7397773b-bfd0-4ad3-896e-b3adebcff057.png"
+                alt="Marquee setup 4"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png"
+                alt="Marquee setup 5"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png"
+                alt="Marquee setup 6"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline" size="lg">
@@ -170,10 +203,10 @@ const MarqueeHire = () => {
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
-              <Link to="/booking">Get Quote Now</Link>
+              <Link to="/booking#enquiry-form">Get Quote Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/contact">Call Us: 09 401 1044</Link>
+              <a href="tel:094011044">Call Us: 09 401 1044</a>
             </Button>
           </div>
         </div>
