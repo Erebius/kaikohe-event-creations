@@ -84,7 +84,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
               <a 
-                href="https://www.facebook.com" 
+                href="https://www.facebook.com/kaikohehire/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors flex items-center space-x-1"
