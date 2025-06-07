@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -8,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +17,8 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const contactMethods = [
     {
@@ -61,10 +63,41 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
+    setIsSubmitting(true);
+    
+    try {
+      // TODO: Replace with actual email sending service when Supabase is connected
+      // For now, simulate email sending
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      console.log('Form submitted:', formData);
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your enquiry. We'll get back to you within 24 hours.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -127,6 +160,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="space-y-2">
@@ -138,6 +172,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -151,6 +186,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="space-y-2">
@@ -161,6 +197,7 @@ const Contact = () => {
                         placeholder="e.g., Wedding Inquiry"
                         value={formData.subject}
                         onChange={handleInputChange}
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -175,11 +212,17 @@ const Contact = () => {
                       onChange={handleInputChange}
                       rows={6}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full btn-primary">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full btn-primary"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
                   </Button>
 
                   <p className="text-sm text-gray-600 text-center">
