@@ -12,9 +12,12 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { format } from 'date-fns';
 import { CalendarIcon, Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useToast } from '@/components/ui/use-toast';
 
 const Booking = () => {
   const [date, setDate] = useState<Date>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,19 +33,28 @@ const Booking = () => {
       title: 'Submit Enquiry',
       description: 'Tell us about your event needs using our enquiry form or give us a call to discuss your requirements.',
       icon: '📝',
-      action: 'Start Enquiry'
+      action: 'Start Enquiry',
+      onClick: () => {
+        document.getElementById('enquiry-form')?.scrollIntoView({ behavior: 'smooth' });
+      }
     },
     {
       title: 'Receive Quote',
       description: 'We\'ll provide a detailed quote based on your specific needs and event requirements.',
       icon: '💰',
-      action: 'Get Quote'
+      action: 'Get Quote',
+      onClick: () => {
+        document.getElementById('enquiry-form')?.scrollIntoView({ behavior: 'smooth' });
+      }
     },
     {
       title: 'Confirm by Phone',
       description: 'Once you\'re happy with the quote, call us to confirm your booking and arrange delivery details.',
       icon: '📞',
-      action: 'Confirm Booking'
+      action: 'Confirm Booking',
+      onClick: () => {
+        window.location.href = 'tel:09-401-1044';
+      }
     }
   ];
 
@@ -53,10 +65,57 @@ const Booking = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Enquiry submitted:', formData, date);
-    // Handle enquiry submission logic here
+    setIsSubmitting(true);
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Event Enquiry - ${formData.eventType || 'Event'}`);
+      const body = encodeURIComponent(`
+Event Enquiry Details:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Event Date: ${date ? format(date, "PPP") : 'Not specified'}
+Event Type: ${formData.eventType}
+Expected Guest Count: ${formData.guestCount}
+Venue/Location: ${formData.venue}
+
+Event Details & Requirements:
+${formData.message}
+      `);
+
+      const mailtoLink = `mailto:kaikohe.hire@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+
+      toast({
+        title: "Enquiry Submitted",
+        description: "Your default email app should open. If not, please email us directly at kaikohe.hire@gmail.com",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        eventType: '',
+        guestCount: '',
+        venue: '',
+        message: ''
+      });
+      setDate(undefined);
+
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an issue submitting your enquiry. Please call us directly at 09 401 1044.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -74,8 +133,12 @@ const Booking = () => {
             through direct contact to ensure we get every detail right for your special occasion.
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-            <Button asChild size="lg" className="btn-primary">
-              <Link to="#enquiry-form">Submit Enquiry</Link>
+            <Button 
+              size="lg" 
+              className="btn-primary"
+              onClick={() => document.getElementById('enquiry-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Submit Enquiry
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="tel:09-401-1044">
@@ -105,7 +168,7 @@ const Booking = () => {
                   <div className="text-4xl mb-4">{step.icon}</div>
                   <h3 className="text-xl font-serif font-semibold mb-3">{step.title}</h3>
                   <p className="text-gray-600 mb-4">{step.description}</p>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full" onClick={step.onClick}>
                     {step.action}
                   </Button>
                 </CardContent>
@@ -147,8 +210,13 @@ const Booking = () => {
                 <p className="text-gray-600 mb-6">
                   Fill out our detailed enquiry form and we'll get back to you with a personalized quote.
                 </p>
-                <Button asChild variant="outline" size="lg" className="w-full">
-                  <Link to="#enquiry-form">Enquiry Form</Link>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={() => document.getElementById('enquiry-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Enquiry Form
                 </Button>
               </CardContent>
             </Card>
@@ -282,8 +350,8 @@ const Booking = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full btn-primary">
-                    Submit Enquiry
+                  <Button type="submit" size="lg" className="w-full btn-primary" disabled={isSubmitting}>
+                    {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                   </Button>
 
                   <div className="text-center space-y-2">

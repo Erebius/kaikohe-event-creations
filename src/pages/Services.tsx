@@ -46,14 +46,15 @@ const Services = () => {
   ];
 
   const marqueesData = [
-    { item: "6x6m Marquee", price: "$500.00" },
-    { item: "6x9m Marquee", price: "$700.00" },
-    { item: "12x9m Marquee", price: "$1,300–$1,500" },
-    { item: "12x12m Marquee", price: "$1,800.00" },
-    { item: "12x18m Marquee", price: "$2,700.00" },
-    { item: "12x24m Marquee", price: "$3,100.00" },
-    { item: "12x30m Marquee", price: "$3,900.00" },
-    { item: "12x36m Marquee", price: "$4,600.00" }
+    { item: "6x6m Marquee", price: "$500.00", capacity: "Up to 30 guests" },
+    { item: "6x9m Marquee", price: "$700.00", capacity: "Up to 50 guests" },
+    { item: "Star 8x8m Marquee", price: "Enquiry Only", capacity: "Special events" },
+    { item: "12x9m Marquee", price: "Call for Quote", capacity: "Up to 80 guests" },
+    { item: "12x12m Marquee", price: "$1,800.00", capacity: "Up to 100 guests" },
+    { item: "12x18m Marquee", price: "$2,700.00", capacity: "Up to 140 guests" },
+    { item: "12x24m Marquee", price: "$3,100.00", capacity: "Up to 180 guests" },
+    { item: "12x30m Marquee", price: "$3,900.00", capacity: "Large events" },
+    { item: "12x36m Marquee", price: "$4,600.00", capacity: "Large events" }
   ];
 
   return (
@@ -70,7 +71,7 @@ const Services = () => {
             service ensure your event runs smoothly.
           </p>
           <Button asChild size="lg" className="btn-primary">
-            <Link to="/booking">Get Started</Link>
+            <Link to="/booking#enquiry-form">Get Started</Link>
           </Button>
         </div>
       </section>
@@ -183,7 +184,7 @@ const Services = () => {
               <CardHeader>
                 <CardTitle className="text-2xl font-serif">Marquees</CardTitle>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  All marquees are peg and pole, requiring setup on grass with an additional 1.5m of available area on each side.
+                  All marquees are peg and pole, requiring setup on grass with an additional 1.5m of available area on each side. We don't offer custom sizes.
                 </p>
               </CardHeader>
               <CardContent>
@@ -192,6 +193,7 @@ const Services = () => {
                     <TableHeader>
                       <TableRow>
                         <TableHead className="font-semibold text-foreground">Item</TableHead>
+                        <TableHead className="font-semibold text-foreground">Guest Capacity</TableHead>
                         <TableHead className="font-semibold text-foreground text-right">Price (NZD)</TableHead>
                       </TableRow>
                     </TableHeader>
@@ -199,6 +201,7 @@ const Services = () => {
                       {marqueesData.map((row, index) => (
                         <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                           <TableCell className="font-medium">{row.item}</TableCell>
+                          <TableCell className="text-sm text-gray-600">{row.capacity}</TableCell>
                           <TableCell className="text-right font-medium">{row.price}</TableCell>
                         </TableRow>
                       ))}
@@ -222,7 +225,7 @@ const Services = () => {
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
             <Button asChild size="lg" className="btn-primary">
-              <Link to="/booking">Book Now</Link>
+              <Link to="/booking#enquiry-form">Book Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link to="/contact">Contact Us</Link>
