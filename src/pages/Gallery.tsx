@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -38,36 +39,6 @@ const Gallery = () => {
       image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
       title: 'Marquee Interior Detail',
       category: 'Weddings'
-    },
-    {
-      image: '/lovable-uploads/fc0e2c21-ca21-4f2b-9f98-e398590a93a8.png',
-      title: 'Garden Party Setup',
-      category: 'Community Events'
-    },
-    {
-      image: '/lovable-uploads/8b4f4486-94a3-4b2a-b558-169932e930f3.png',
-      title: 'Corporate Dinner Event',
-      category: 'Corporate Events'
-    },
-    {
-      image: '/lovable-uploads/b3e214a0-14e6-4269-91be-aa1499f26ec0.png',
-      title: 'Anniversary Celebration',
-      category: 'Weddings'
-    },
-    {
-      image: '/lovable-uploads/689e4e32-9c73-4fa8-9caf-3219b0a6b0c4.png',
-      title: 'Community Fundraiser',
-      category: 'Community Events'
-    },
-    {
-      image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png',
-      title: 'Outdoor Conference',
-      category: 'Corporate Events'
-    },
-    {
-      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png',
-      title: 'Reception Preparation',
-      category: 'Weddings'
     }
   ];
 
@@ -89,7 +60,7 @@ const Gallery = () => {
             create memorable experiences.
           </p>
           <Button asChild size="lg" className="btn-primary">
-            <Link to="/booking">Plan Your Event Now</Link>
+            <Link to="/booking#enquiry-form">Plan Your Event Now</Link>
           </Button>
         </div>
       </section>
@@ -218,7 +189,7 @@ const Gallery = () => {
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
             <Button asChild size="lg" className="btn-primary">
-              <Link to="/booking">Start Planning</Link>
+              <Link to="/booking#enquiry-form">Start Planning</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link to="/contact">Discuss Your Vision</Link>
