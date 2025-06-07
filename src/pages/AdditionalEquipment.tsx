@@ -11,17 +11,14 @@ const AdditionalEquipment = () => {
       items: [
         'String lights for romantic ambiance',
         'LED uplighting for color enhancement',
-        'Spotlights for key areas',
-        'Dance floor lighting'
+        'Spotlights for key areas'
       ],
       description: 'Create the perfect atmosphere with our professional lighting solutions.',
-      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png'
+      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png'
     },
     {
       category: 'Dance Floors',
       items: [
-        'Portable wooden dance floors',
-        'Various sizes available',
         'Professional installation',
         'Safe, level surfaces'
       ],
@@ -33,19 +30,16 @@ const AdditionalEquipment = () => {
       items: [
         'Clean, modern portaloos',
         'Hand washing stations',
-        'Mirror and lighting included',
-        'Safety rails for accessibility',
+        'Mirror included',
         'Regular servicing available'
       ],
       description: 'Ensure guest comfort with our high-quality portable facilities.',
-      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png'
+      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png'
     },
     {
       category: 'Staging & Platforms',
       items: [
         'Modular stage systems',
-        'Various heights and sizes',
-        'Safety railings included',
         'Weather-resistant materials'
       ],
       description: 'Elevate your performers and speakers with our professional staging.',
@@ -103,7 +97,7 @@ const AdditionalEquipment = () => {
             </div>
             <div className="relative">
               <img 
-                src="/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png" 
+                src="/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png" 
                 alt="Event lighting setup"
                 className="rounded-lg shadow-xl"
               />
