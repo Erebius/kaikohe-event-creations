@@ -14,7 +14,7 @@ const AdditionalEquipment = () => {
         'Spotlights for key areas'
       ],
       description: 'Create the perfect atmosphere with our professional lighting solutions.',
-      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png'
+      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png'
     },
     {
       category: 'Dance Floors',
@@ -34,7 +34,7 @@ const AdditionalEquipment = () => {
         'Regular servicing available'
       ],
       description: 'Ensure guest comfort with our high-quality portable facilities.',
-      image: '/lovable-uploads/7776586b-dacd-40ff-b836-120ffa42d01e.png'
+      image: '/lovable-uploads/ba08dba8-b2f4-4760-a30d-1c513d0056eb.png'
     },
     {
       category: 'Staging & Platforms',
@@ -44,6 +44,17 @@ const AdditionalEquipment = () => {
       ],
       description: 'Elevate your performers and speakers with our professional staging.',
       image: '/lovable-uploads/f5f2394e-9a51-4aba-a01a-eb04e16925fd.png'
+    },
+    {
+      category: 'Tableware & Glassware',
+      items: [
+        'Cups and plates',
+        'Cutlery sets',
+        'Wine glasses',
+        'Complete dining solutions'
+      ],
+      description: 'Complete your event with our range of tableware, cutlery, and glassware.',
+      image: '/lovable-uploads/3c60f3dc-8a94-4c5a-b636-8abb26a02e44.png'
     }
   ];
 
@@ -84,7 +95,7 @@ const AdditionalEquipment = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Enhance your event with our comprehensive range of additional equipment and services. 
                 From practical solutions like portaloos to ambiance-enhancing options like lighting 
-                and dance floors, we have it all.
+                and dance floors, plus complete tableware and glassware, we have it all.
               </p>
               <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex">
                 <Button asChild size="lg" className="btn-primary">
@@ -203,7 +214,7 @@ const AdditionalEquipment = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-sm">LED uplighting</span>
+                    <span className="text-sm">Wine glasses & tableware</span>
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
@@ -226,7 +237,7 @@ const AdditionalEquipment = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-sm">Sound system</span>
+                    <span className="text-sm">Cups & plates</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -253,7 +264,7 @@ const AdditionalEquipment = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-sm">Hand wash stations</span>
+                    <span className="text-sm">Basic tableware</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent rounded-full"></div>
