@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -144,66 +143,6 @@ const TablesChairs = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Package Examples */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Popular Combinations
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here are some popular table and chair combinations for different event types.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-serif font-semibold mb-3">Wedding Package</h3>
-                <div className="space-y-2 mb-4">
-                  <p className="text-gray-600">1.8m Round Tables</p>
-                  <p className="text-gray-600">Folding Chairs</p>
-                  <p className="text-gray-600">50-100 guests</p>
-                </div>
-                <p className="text-2xl font-bold text-primary mb-4">From $22.50/table setting</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking#enquiry-form">Get Quote</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-serif font-semibold mb-3">Corporate Package</h3>
-                <div className="space-y-2 mb-4">
-                  <p className="text-gray-600">Rectangular Tables</p>
-                  <p className="text-gray-600">Stacking Chairs</p>
-                  <p className="text-gray-600">20-80 guests</p>
-                </div>
-                <p className="text-2xl font-bold text-primary mb-4">From $14.50/table setting</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking#enquiry-form">Get Quote</Link>
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-serif font-semibold mb-3">Community Package</h3>
-                <div className="space-y-2 mb-4">
-                  <p className="text-gray-600">Mix of Table Sizes</p>
-                  <p className="text-gray-600">Folding Chairs</p>
-                  <p className="text-gray-600">30-150 guests</p>
-                </div>
-                <p className="text-2xl font-bold text-primary mb-4">From $15/table setting</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking#enquiry-form">Get Quote</Link>
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
