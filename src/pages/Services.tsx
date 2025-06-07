@@ -46,8 +46,8 @@ const Services = () => {
   ];
 
   const marqueesData = [
-    { item: "6x6m Marquee", price: "$500.00", capacity: "Up to 30 guests" },
-    { item: "6x9m Marquee", price: "$700.00", capacity: "Up to 50 guests" },
+    { item: "6x6m Marquee", price: "$500.00", capacity: "Up to 25 guests" },
+    { item: "6x9m Marquee", price: "$700.00", capacity: "Up to 35 guests" },
     { item: "Star 8x8m Marquee", price: "Enquiry Only", capacity: "Special events" },
     { item: "12x9m Marquee", price: "Call for Quote", capacity: "Up to 80 guests" },
     { item: "12x12m Marquee", price: "$1,800.00", capacity: "Up to 100 guests" },
@@ -71,7 +71,7 @@ const Services = () => {
             service ensure your event runs smoothly.
           </p>
           <Button asChild size="lg" className="btn-primary">
-            <Link to="/booking#enquiry-form">Get Started</Link>
+            <Link to="/booking#enquiry-form">Get Quote</Link>
           </Button>
         </div>
       </section>
