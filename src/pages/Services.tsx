@@ -35,8 +35,9 @@ const Services = () => {
     { item: "Folding Chair", price: "$3.00" },
     { item: "Plastic Round Table 1.2m", price: "$12.00" },
     { item: "Plastic Round Table 1.8m", price: "$19.50" },
-    { item: "Rectangular Plastic Table", price: "$12.00" },
-    { item: "Wood Trestle Table", price: "$12.00" },
+    { item: "Rectangular Plastic Table (1.8m)", price: "$12.50" },
+    { item: "Wood Trestle Table (2.4m)", price: "$12.50" },
+    { item: "Macrocarpa/Oldman Pine Trestle Tables", price: "$15.00" },
     { item: "Stage Panel", price: "$60.00" }
   ];
 
@@ -53,7 +54,7 @@ const Services = () => {
     { item: "12x12m Marquee", price: "$1,800.00", capacity: "Up to 100 guests" },
     { item: "12x18m Marquee", price: "$2,700.00", capacity: "Up to 140 guests" },
     { item: "12x24m Marquee", price: "$3,100.00", capacity: "Up to 180 guests" },
-    { item: "12x30m Marquee", price: "$3,900.00", capacity: "Large events" },
+    { item: "12x30m Marquee", price: "$3,600.00", capacity: "Large events" },
     { item: "12x36m Marquee", price: "$4,600.00", capacity: "Large events" }
   ];
 
@@ -117,10 +118,10 @@ const Services = () => {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              January 2025 Equipment Hire Prices
+              Equipment Hire Prices as of January 2025
             </h2>
             <p className="text-muted-foreground italic text-lg">
-              Prices for 1–3 day hireage. All prices are subject to change.
+              Prices for 1–3 day hireage. All prices are subject to change. All prices are GST (15%) excluded.
             </p>
           </div>
 
