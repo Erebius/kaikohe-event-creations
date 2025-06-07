@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -46,19 +47,6 @@ const Index = () => {
       title: 'Exceptional Service',
       description: 'Our friendly team ensures seamless delivery and setup, so you can focus on your event.',
       icon: '🤝',
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: "Kaikohe Hire made our wedding day perfect. The marquee was stunning, and the team was so helpful!",
-      name: "Sarah T.",
-      location: "Kaikohe",
-    },
-    {
-      quote: "Reliable, professional, and affordable. They made our corporate event a breeze.",
-      name: "James R.",
-      location: "Whangarei",
     },
   ];
 
@@ -152,37 +140,6 @@ const Index = () => {
                   <Button asChild variant="outline" className="w-full">
                     <Link to={service.link}>Learn More</Link>
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="section-padding bg-primary text-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-blue-100">
-              Hear from our satisfied clients who trusted Kaikohe Hire to make their events special.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/10 border-white/20 text-white">
-                <CardContent className="p-8">
-                  <div className="text-4xl mb-4 text-accent">"</div>
-                  <p className="text-lg mb-6 leading-relaxed">{testimonial.quote}</p>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                      <span className="font-bold text-white">{testimonial.name.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-blue-200">{testimonial.location}</p>
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
             ))}
