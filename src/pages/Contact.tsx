@@ -1,25 +1,12 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
   const contactMethods = [
     {
       title: 'Phone',
@@ -55,50 +42,6 @@ const Contact = () => {
       answer: 'Absolutely! We work with you to create a tailored package that meets your specific event needs and budget. Contact us to discuss your requirements.'
     }
   ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // TODO: Replace with actual email sending service when Supabase is connected
-      // For now, simulate email sending
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log('Form submitted:', formData);
-      
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your enquiry. We'll get back to you within 24 hours.",
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-      
-    } catch (error) {
-      console.error('Error sending email:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or call us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div>
@@ -140,7 +83,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Email Message Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
@@ -149,86 +92,29 @@ const Contact = () => {
               <p className="text-gray-600">Get in touch with your event requirements and we'll get back to you soon.</p>
             </div>
             <Card>
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        disabled={isSubmitting}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        disabled={isSubmitting}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        disabled={isSubmitting}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        placeholder="e.g., Wedding Inquiry"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        disabled={isSubmitting}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your event or question..."
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={6}
-                      required
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full btn-primary"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
-                  </Button>
-
-                  <p className="text-sm text-gray-600 text-center">
-                    We'll get back to you within 24 hours.
-                  </p>
-                </form>
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl mb-4">✉️</div>
+                <h3 className="text-xl font-serif font-semibold mb-4">
+                  Open Your Email App
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Click the button below to open your default email app with our email address pre-filled.
+                </p>
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="w-full btn-primary mb-4"
+                >
+                  <a href="mailto:info@kaikohehire.co.nz?subject=Event Inquiry - Kaikohe Hire">
+                    Open Email App
+                  </a>
+                </Button>
+                <p className="text-sm text-gray-600">
+                  Or email us directly at: 
+                  <a href="mailto:info@kaikohehire.co.nz" className="text-primary hover:text-primary/80 ml-1">
+                    info@kaikohehire.co.nz
+                  </a>
+                </p>
               </CardContent>
             </Card>
           </div>
