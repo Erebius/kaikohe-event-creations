@@ -225,20 +225,9 @@ const Contact = () => {
                     {isSubmitting ? 'Sending Message...' : 'Send Message'}
                   </Button>
 
-                  <div className="text-center space-y-2">
-                    <p className="text-sm text-gray-600">
-                      We'll get back to you within 24 hours.
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Or email us directly at:{' '}
-                      <a 
-                        href="mailto:info@kaikohehire.co.nz" 
-                        className="text-primary hover:text-primary/80 font-medium"
-                      >
-                        info@kaikohehire.co.nz
-                      </a>
-                    </p>
-                  </div>
+                  <p className="text-sm text-gray-600 text-center">
+                    We'll get back to you within 24 hours.
+                  </p>
                 </form>
               </CardContent>
             </Card>

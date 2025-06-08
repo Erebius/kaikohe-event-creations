@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -84,12 +85,21 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
               <a 
-                href="https://www.facebook.com/kaikohehire/" 
+                href="https://www.facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-primary transition-colors flex items-center space-x-1"
               >
                 <span>Facebook</span>
+              </a>
+              <a 
+                href="https://maps.google.com/?q=123+Main+Road+Kaikohe+New+Zealand" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-primary transition-colors flex items-center space-x-1"
+              >
+                <MapPin className="w-4 h-4" />
+                <span>Find Us</span>
               </a>
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
